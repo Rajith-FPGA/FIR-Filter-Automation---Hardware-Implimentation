@@ -1,0 +1,347 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Wed Nov  5 22:12:34 2025
+# Process ID         : 888
+# Current directory  : D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.runs/synth_1
+# Command line       : vivado.exe -log fir_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fir_top.tcl
+# Log file           : D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.runs/synth_1/fir_top.vds
+# Journal file       : D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.runs/synth_1\vivado.jou
+# Running On         : DESKTOP-SQCDIHN
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19045
+# Processor Detail   : Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz
+# CPU Frequency      : 3696 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 17111 MB
+# Swap memory        : 2550 MB
+# Total Virtual      : 19661 MB
+# Available Virtual  : 8911 MB
+#-----------------------------------------------------------
+source fir_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 501.953 ; gain = 210.383
+Command: synth_design -top fir_top -part xc7s50csga324-1 -incremental_mode off
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
+INFO: [Device 21-403] Loading part xc7s50csga324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 4728
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1179.480 ; gain = 493.176
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'fir_top' [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.srcs/sources_1/new/fir_top.v:13]
+INFO: [Synth 8-6157] synthesizing module 'fir_core' [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.srcs/sources_1/new/fir_core.v:13]
+	Parameter data_width bound to: 16 - type: integer 
+	Parameter coeff_width bound to: 18 - type: integer 
+	Parameter accumulator_width bound to: 48 - type: integer 
+	Parameter num_taps bound to: 317 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_audio' [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.runs/synth_1/.Xil/Vivado-888-DESKTOP-SQCDIHN/realtime/clk_wiz_audio_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_audio' (0#1) [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.runs/synth_1/.Xil/Vivado-888-DESKTOP-SQCDIHN/realtime/clk_wiz_audio_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'adc_clock_sim' [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.srcs/sources_1/new/adc_clock_sim.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'adc_clock_sim' (0#1) [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.srcs/sources_1/new/adc_clock_sim.v:23]
+INFO: [Synth 8-6157] synthesizing module 'clk_sync' [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.srcs/sources_1/new/clk_sync.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'clk_sync' (0#1) [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.srcs/sources_1/new/clk_sync.v:13]
+INFO: [Synth 8-6157] synthesizing module 'sample_mem' [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.srcs/sources_1/new/sample_mem.v:12]
+	Parameter data_width bound to: 16 - type: integer 
+	Parameter filter_taps bound to: 317 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sample_mem' (0#1) [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.srcs/sources_1/new/sample_mem.v:12]
+INFO: [Synth 8-6157] synthesizing module 'coeff_rom' [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.srcs/sources_1/new/coeff_rom.v:15]
+	Parameter filter_coeff_width bound to: 18 - type: integer 
+	Parameter number_taps bound to: 317 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'fir_coeffs_317_q17.mem' is read successfully [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.srcs/sources_1/new/coeff_rom.v:34]
+INFO: [Synth 8-6155] done synthesizing module 'coeff_rom' (0#1) [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.srcs/sources_1/new/coeff_rom.v:15]
+INFO: [Synth 8-6157] synthesizing module 'mac_unit' [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.srcs/sources_1/new/mac_unit.v:13]
+	Parameter x_left_width bound to: 16 - type: integer 
+	Parameter x_right_width bound to: 16 - type: integer 
+	Parameter coeff_width bound to: 18 - type: integer 
+	Parameter pre_add_width bound to: 18 - type: integer 
+	Parameter product_out_width bound to: 36 - type: integer 
+	Parameter accumulate_width bound to: 48 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mac_unit' (0#1) [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.srcs/sources_1/new/mac_unit.v:13]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.srcs/sources_1/new/fir_core.v:190]
+INFO: [Synth 8-6155] done synthesizing module 'fir_core' (0#1) [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.srcs/sources_1/new/fir_core.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'fir_top' (0#1) [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.srcs/sources_1/new/fir_top.v:13]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1288.902 ; gain = 602.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1288.902 ; gain = 602.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1288.902 ; gain = 602.598
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1288.902 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.gen/sources_1/ip/clk_wiz_audio/clk_wiz_audio/clk_wiz_audio_in_context.xdc] for cell 'fir_1/audio_pll_inst'
+Finished Parsing XDC File [d:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.gen/sources_1/ip/clk_wiz_audio/clk_wiz_audio/clk_wiz_audio_in_context.xdc] for cell 'fir_1/audio_pll_inst'
+Parsing XDC File [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.srcs/constrs_1/new/mac_unit.xdc]
+Finished Parsing XDC File [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.srcs/constrs_1/new/mac_unit.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1373.246 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1373.246 ; gain = 0.000
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1373.246 ; gain = 686.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7s50csga324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1373.246 ; gain = 686.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1373.246 ; gain = 686.941
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3971] The signal "sample_mem:/memory_reg" was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1373.246 ; gain = 686.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   34 Bit       Adders := 1     
+	   3 Input   10 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 2     
+	   3 Input    9 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 2     
++---Registers : 
+	               34 Bit    Registers := 1     
+	               18 Bit    Registers := 1     
+	               16 Bit    Registers := 4     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 10    
++---RAMs : 
+	               4K Bit	(317 X 16 bit)          RAMs := 1     
++---ROMs : 
+	                    ROMs := 1     
++---Muxes : 
+	   2 Input    9 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 2     
+	   5 Input    8 Bit        Muxes := 1     
+	   5 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 3     
+	   5 Input    1 Bit        Muxes := 14    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 120 (col length:60)
+BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3936] Found unconnected internal register 'fir_1/rounded_val_reg' and it is trimmed from '34' to '33' bits. [D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.srcs/sources_1/new/fir_core.v:252]
+DSP Report: Generating DSP fir_1/mac_1/accumulated_sum_reg, operation Mode is: (P+(D'+A2)*B2)'.
+DSP Report: register fir_1/mac_1/x_right_final_reg is absorbed into DSP fir_1/mac_1/accumulated_sum_reg.
+DSP Report: register fir_1/mac_1/filter_coeff_final_reg is absorbed into DSP fir_1/mac_1/accumulated_sum_reg.
+DSP Report: register fir_1/mac_1/x_left_final_reg is absorbed into DSP fir_1/mac_1/accumulated_sum_reg.
+DSP Report: register fir_1/mac_1/accumulated_sum_reg is absorbed into DSP fir_1/mac_1/accumulated_sum_reg.
+DSP Report: operator fir_1/mac_1/accumulated_sum0 is absorbed into DSP fir_1/mac_1/accumulated_sum_reg.
+DSP Report: operator fir_1/mac_1/accumulated_sum1 is absorbed into DSP fir_1/mac_1/accumulated_sum_reg.
+DSP Report: operator fir_1/mac_1/pre_add is absorbed into DSP fir_1/mac_1/accumulated_sum_reg.
+INFO: [Synth 8-3971] The signal "fir_top/fir_1/buffer/memory_reg" was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1373.246 ; gain = 686.941
+---------------------------------------------------------------------------------
+ Sort Area is  fir_1/mac_1/accumulated_sum_reg_0 : 0 0 : 2674 2674 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+-------------------------------------+---------------+----------------+
+|Module Name | RTL Object                          | Depth x Width | Implemented As | 
++------------+-------------------------------------+---------------+----------------+
+|fir_top     | fir_1/k_index_from_fir_core_reg_rep | 256x18        | Block RAM      | 
++------------+-------------------------------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping Report (see note below)
+-------NONE-------
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping     | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|mac_unit    | (P+(D'+A2)*B2)' | 16     | 18     | -      | 16     | 48     | 1    | 1    | -    | 1    | 0     | 0    | 1    | 
++------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1533.734 ; gain = 847.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1534.254 ; gain = 847.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
+-------NONE-------
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance fir_1/buffer/memory_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance fir_1/buffer/memory_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1562.910 ; gain = 876.605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1779.160 ; gain = 1092.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1779.160 ; gain = 1092.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1779.160 ; gain = 1092.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1779.160 ; gain = 1092.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1780.168 ; gain = 1093.863
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1780.168 ; gain = 1093.863
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping   | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|mac_unit    | (P+D'+A'*B')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 0     | 0    | 1    | 
++------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_audio |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+--------------+------+
+|      |Cell          |Count |
++------+--------------+------+
+|1     |clk_wiz_audio |     1|
+|2     |CARRY4        |    16|
+|3     |DSP48E1       |     1|
+|4     |LUT1          |     6|
+|5     |LUT2          |    36|
+|6     |LUT3          |    17|
+|7     |LUT4          |    34|
+|8     |LUT5          |    19|
+|9     |LUT6          |    24|
+|10    |RAMB18E1      |     3|
+|12    |FDCE          |    10|
+|13    |FDRE          |    65|
+|14    |FDSE          |     5|
+|15    |IBUF          |    17|
+|16    |OBUF          |    17|
++------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1780.168 ; gain = 1093.863
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:34 . Memory (MB): peak = 1780.168 ; gain = 1009.520
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 1780.168 ; gain = 1093.863
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1780.168 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1780.168 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 18ad7ba8
+INFO: [Common 17-83] Releasing license: Synthesis
+38 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1780.168 ; gain = 1267.277
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1780.168 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Xilinx_Projects/FIR_Filter/fir_lowpass_317taps/fir_lowpass_317taps.runs/synth_1/fir_top.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file fir_top_utilization_synth.rpt -pb fir_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Nov  5 22:13:23 2025...
