@@ -99,8 +99,8 @@ Planned features:
 ---
 
 ## 🧰 Tools & Environment  
-- **Vivado 2023.2** (Arty S7-50 – xc7s50csga324-1)  
-- **ModelSim 2023** for simulation and waveform debug  
+- **Vivado 2025.1** (Arty S7-50 – xc7s50csga324-1)  
+- **Vivado 2025.1 Simulation** for simulation and waveform debug  
 - **Python 3.10** for DSP coefficient generation and verification  
 - **24 MHz 8-ch Logic Analyzer** for hardware validation  
 - **Git + GitHub** for phase-based project versioning  
@@ -118,5 +118,5 @@ Planned features:
 ## 👤 Author  
 **Rajith Senaratna**  
 FPGA / DSP Design Engineer in Training  
-Arty S7-50 | Vivado | SystemVerilog | DSP48 | Audio Systems  
+
 
