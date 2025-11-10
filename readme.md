@@ -12,7 +12,7 @@
 >
 > **Next Milestone:**  
 > ✅ Achieve clean timing closure and verified multi-clock FSM behavior for parallel MACs.  
-> 🎯 **New Target Delivery:** **November 12 2025**
+> 🎯 **Target Delivery:** **November 13 2025**
 
 
 ## 🚀 Overview  
