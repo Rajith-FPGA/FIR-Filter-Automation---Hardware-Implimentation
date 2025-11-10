@@ -1,5 +1,19 @@
 # 🎧 FPGA-DSP Audio Filter Automation Project — Hardware Implementation  
 ### (Phases 1–3: Simulation → Parallelization → Real-Time ADC/DAC)
+> ## ⚙️ Project Status Update – November 10 2025
+>
+> **Current Phase:** Multiplexing and Parallelizing the FIR Core  
+> **Status:** Integrating 4-way parallel MAC operation and verifying synchronization between 400 MHz (compute) and 100 MHz (control) domains.  
+>
+> **Challenges Encountered:**  
+> - Cross-domain timing violations (400 ↔ 100 MHz / 12.288 MHz) during synthesis.  
+> - Implementing safe CDC (FIFO / handshake) and pipelining to achieve stable timing at 400 MHz.  
+> - FSM coordination for parallel MAC activation and accumulation sequencing.  
+>
+> **Next Milestone:**  
+> ✅ Achieve clean timing closure and verified multi-clock FSM behavior for parallel MACs.  
+> 🎯 **New Target Delivery:** **November 12 2025**
+
 
 ## 🚀 Overview  
 This repository continues the **FPGA-DSP Audio Filter Automation Project**, which originally automated FIR filter design, analysis, and ranking in Python.  
