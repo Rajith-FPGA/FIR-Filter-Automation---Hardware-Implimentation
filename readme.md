@@ -1,5 +1,40 @@
 # 🎧 FPGA-DSP Audio Filter Automation Project — Hardware Implementation  
-### (Phases 1–3: Simulation → Parallelization → Real-Time ADC/DAC)
+## (Phases 1–3: Simulation → Parallelization → Real-Time ADC/DAC)
+
+> ### 📌 Project Status November 10 2025 (Second Update)
+> Currently in **Multiplexing & Parallelization** phase — optimizing the 317-tap FIR core for timing closure and DSP efficiency on the Spartan-7.
+>
+> **🧩 Architecture Update**
+> - Original build ran **4 parallel MACs at 400 MHz** with dual-read BRAM.  
+> - Timing violations confirmed this exceeds practical fabric limits.  
+> - Architecture now shifting to **200 MHz time-multiplexed MAC scheduling** for stable closure and resource efficiency.
+> - 
+> **⚙️ Timing Closure (400 MHz Attempt)**
+> - Vivado showed **setup violations (~ –3.3 ns WNS)** between BRAM → DSP paths.  
+> - BRAM18E1 itself failed 2.5 ns period (≈ –0.44 ns slack).  
+> - Confirms Spartan-7 cannot sustain true 400 MHz with memory access.  
+> - Realistic range: **200–300 MHz** depending on routing.
+> 
+> **🔧 Next Step**
+> ✅ Retarget to **200 MHz**, maintain throughput using **time-multiplexed MAC reuse**.  
+> Focus: clean timing, reduced fan-out, and production-feasible FPGA mapping.
+
+
+
+> ## ⚙️ Project Status Update – November 10 2025
+>
+> **Current Phase:** Multiplexing and Parallelizing the FIR Core  
+> **Status:** Integrating 4-way parallel MAC operation and verifying synchronization between 400 MHz (compute) and 100 MHz (control) domains.  
+>
+> **Challenges Encountered:**  
+> - Cross-domain timing violations (400 ↔ 100 MHz / 12.288 MHz) during synthesis.  
+> - Implementing safe CDC (FIFO / handshake) and pipelining to achieve stable timing at 400 MHz.  
+> - FSM coordination for parallel MAC activation and accumulation sequencing.  
+>
+> **Next Milestone:**  
+> ✅ Achieve clean timing closure and verified multi-clock FSM behavior for parallel MACs.  
+> 🎯 **Target Delivery:** **November 13 2025**
+
 
 ## 🚀 Overview  
 This repository continues the **FPGA-DSP Audio Filter Automation Project**, which originally automated FIR filter design, analysis, and ranking in Python.  
@@ -99,8 +134,8 @@ Planned features:
 ---
 
 ## 🧰 Tools & Environment  
-- **Vivado 2023.2** (Arty S7-50 – xc7s50csga324-1)  
-- **ModelSim 2023** for simulation and waveform debug  
+- **Vivado 2025.1** (Arty S7-50 – xc7s50csga324-1)  
+- **Vivado 2025.1 Simulation** for simulation and waveform debug  
 - **Python 3.10** for DSP coefficient generation and verification  
 - **24 MHz 8-ch Logic Analyzer** for hardware validation  
 - **Git + GitHub** for phase-based project versioning  
@@ -118,5 +153,5 @@ Planned features:
 ## 👤 Author  
 **Rajith Senaratna**  
 FPGA / DSP Design Engineer in Training  
-Arty S7-50 | Vivado | SystemVerilog | DSP48 | Audio Systems  
+
 
