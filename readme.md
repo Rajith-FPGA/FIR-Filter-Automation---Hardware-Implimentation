@@ -1,6 +1,76 @@
 # 🎧 FPGA-DSP Audio Filter Automation Project — Hardware Implementation  
 ## (Phases 1–3: Simulation → Parallelization → Real-Time ADC/DAC)
+> # 📌 Project Status November 15 2025 Phase 2 Done
+> ## ⚠️ Phase 1 Bug Summary and Phase 2 Fixes  
+> ### (Important Engineering Note — Verified and Corrected in Phase 2)
+> 
+> This repository originally contained two major issues in the **Phase 1 behavioral FIR implementation**, which led to incorrect filtering results even though the early charts appeared correct.  
+> These issues were fully diagnosed and resolved in **Phase 2**, and the corrected hardware now matches the Python golden model.
+> 
+> ---
+> 
+> ## 🟥 1. Phase 1 Address Generator Errors  
+> The symmetric memory addressing logic was incorrect in multiple ways:
+> 
+> ### ❌ 1.1 Left and right pointers fell out of sync  
+> - Left pointer did not decrement at the correct cycles  
+> - Right pointer incremented early  
+> - Resulting (xL, xR) sample pairs did **not** correspond to the correct tap index
 
+> ### ❌ 1.2 Incorrect wrap-around at boundaries  
+> - Pointer resets did not occur at exact 0 and 316  
+> - Some taps reused stale samples from previous batches  
+
+> ### ❌ 1.3 Batch-to-batch pointer drift  
+> - Each k-index cycle did not realign cleanly  
+> - Caused non-deterministic tap pair sequences  
+> 
+> **Impact:**  
+> The FIR MAC received incorrect sample pairs → incorrect partial sums → incorrect final FIR output.
+> 
+> ---
+> 
+> ## 🟥 2. Phase 1 Verification Mistake (Fully Admitted and Corrected)  
+> A critical evaluation mistake occurred:
+> 
+> ### ❌ The initial “SNR” and “impulse response” charts compared  
+> **Python output vs Python output**  
+> instead of  
+> **Verilog output vs Python reference**.
+> 
+> Meaning: the early report unintentionally validated Python against itself — not the FPGA.
+> 
+> This created a false sense of correctness while the Phase 1 hardware was still wrong.
+> 
+> ---
+> 
+> # 🟩 Phase 2: Full Resolution and Correct Hardware Output  
+> 
+> ### 🟢 3. Completely Redesigned Address Generator  
+> - True symmetric sequence validated:  
+>   (316,0), (315,1), …, (158,158)  
+> - Correct wrap logic at edges  
+> - Deterministic pointer alignment for all 159 tap pairs  
+> 
+> ### 🟢 4. Explicit DSP48E1 MAC With Correct INMODE  
+> - Correct AREG/BREG/DREG/MREG/PREG configuration  
+> - Fixed coefficient selection bug (INMODE[4] = 0 → correct B2 path)  
+> - Verified MAC1 → MAC2 → accumulator dataflow
+> 
+> ### 🟢 5. Correct Verification Rebuilt From Scratch  
+> - True **Python vs Verilog** comparison  
+> - Impulse response generated from **Verilog output**, not Python  
+> - All 317 taps match expected shape  
+> - Final filtered output matches Python within **±1 LSB**  
+> - SNR ≈ **49.7 dB**, fully quantization-limited  
+> 
+> ---
+> 
+> # 🟦 ✔ Final Status  
+> Phase 1 issues are fully resolved.  
+> Phase 2 hardware is **correct, stable, pipelined, and matches the Python golden model**.  
+> This forms the verified foundation for **Phase 3 (Real-Time ADC/DAC) — Target: Nov 30**.
+> 
 > ### 📌 Project Status November 10 2025 (Second Update)
 > Currently in **Multiplexing & Parallelization** phase — optimizing the 317-tap FIR core for timing closure and DSP efficiency on the Spartan-7.
 >
