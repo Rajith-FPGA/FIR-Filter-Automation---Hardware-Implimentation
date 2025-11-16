@@ -71,7 +71,10 @@
 > Phase 2 hardware is **correct, stable, pipelined, and matches the Python golden model**.  
 > This forms the verified foundation for **Phase 3 (Real-Time ADC/DAC) — Target: Nov 30**.
 > 
-> ### 📌 Project Status November 10 2025 (Second Update)
+
+
+
+> ## 📌 Project Status November 10 2025 (Second Update)
 > Currently in **Multiplexing & Parallelization** phase — optimizing the 317-tap FIR core for timing closure and DSP efficiency on the Spartan-7.
 >
 > **🧩 Architecture Update**
